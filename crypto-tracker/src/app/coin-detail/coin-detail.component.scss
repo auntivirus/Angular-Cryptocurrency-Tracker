@@ -1,0 +1,42 @@
+.title {
+  font-family: 'Oswald', sans-serif;
+  padding-top: 20px;
+  font-size: 40px;
+  text-align: center;
+  color: white
+}
+.details {
+  .coin-name {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0px 30px 50px;
+  }
+}
+
+.more-details {
+  margin-top: 50px;
+  .rank, .current-price, .market-cap{
+    font-size: 24px;
+    font-weight: 300;
+  }
+}
+.btn-custom {
+  color: rgb(0, 0, 0);
+  background: transparent;
+  font-weight: 500;
+  font-size: 20px;
+  border: 1px solid #fff;
+  width: 23%
+}
+.btn-custom:focus {
+  background: #00b9a1;
+  font-weight: 700;
+  font-size: 22px;
+  border: 1px solid #009688;
+}
+.btn-custom:hover {
+  background-color: #009699;
+  font-weight: 600;
+  font-size: 22px;
+  border: 1px solid #009699;
+}
