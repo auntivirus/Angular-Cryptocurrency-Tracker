@@ -27,12 +27,19 @@
 <div class="container mt-3 pb-5">
   <mat-form-field appearance="fill">
     <mat-label>Search</mat-label>
-    <input style="color: black;" matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    <input style="color: black;" matInput (keyup)="applyFilter($event)" placeholder="Ex. Bit..." #input>
   </mat-form-field>
   <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" aria-label="Select page of users"></mat-paginator>
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
 
+      <!-- Coin Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Coin Name </th>
+        <td mat-cell *matCellDef="let row">
+          <p class="mx-2">{{row.name | titlecase}}</p>
+        </td>
+      </ng-container>
       <!-- Coin Column -->
       <ng-container matColumnDef="symbol">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Coin </th>

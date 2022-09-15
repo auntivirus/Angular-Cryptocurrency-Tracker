@@ -13,7 +13,7 @@ import { CurrencyService } from '../service/currency.service';
 export class CoinListComponent implements OnInit {
   bannerData: any =[];
   currency : string = "INR";
-  displayedColumns: string[] = ['symbol','current_price','price_change_percentage_24h', 'market_cap'];
+  displayedColumns: string[] = ['name','symbol','current_price','price_change_percentage_24h', 'market_cap'];
   constructor(private api: ApiService, private router: Router, private currencyService: CurrencyService) { }
 
   ngOnInit(): void {
@@ -34,7 +34,7 @@ export class CoinListComponent implements OnInit {
 
   getAllData() {
     this.api.getCurrency(this.currency).subscribe((res: any) => {
-      console.log(res);
+      // console.log(res);
       // Assign the data to the data source for the table to render
       this.dataSource = new MatTableDataSource(res);
       this.dataSource.paginator = this.paginator;

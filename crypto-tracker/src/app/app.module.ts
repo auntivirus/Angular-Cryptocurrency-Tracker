@@ -6,6 +6,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 import { CoinDetailComponent } from './coin-detail/coin-detail.component';
 import { CoinListComponent } from './coin-list/coin-list.component';
 import { HeaderComponent } from './header/header.component';
@@ -33,6 +34,7 @@ import { NgChartsModule } from 'ng2-charts';
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule,
     FormsModule,
     HttpClientModule,
     MatTableModule,

@@ -1,26 +1,27 @@
 <h1 class="display-2 title">{{coinData?.name}} details</h1>
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-3 details">
+    <div class="col-md-4 details">
       <div class="img">
-        <img [src]="coinData?.image?.large" [alt]="coinData?.id">
-        <h3 class="coin-name"> {{coinData?.name}}</h3>
-        <p class="details" [innerHtml]="coinData?.description?.en.split('. ')[0]"></p>
+        <div id="img-title">
+          <img [src]="coinData?.image?.large" [alt]="coinData?.id">
+        <h3 id="coin-name"> {{coinData?.name}}</h3>
+        </div>
+        <p class="information" [innerHtml]="coinData?.description?.en.split('. ')[0]"></p>
         <div class="more-details">
-          <span class="rank">Rank: <span class="value">{{coinData?.market_cap_rank}}</span></span><br>
-          <span class="current-price">Current Price: <span class="value">{{coinData?.market_data.current_price.inr | currency: currency}}</span></span> <br>
-          <span class="market-cap">Market Cap: <span class="value">{{coinData?.market_data.market_cap.inr | currency: currency}}</span></span>
+          <span class="rank"><strong>Rank: </strong><span class="value">{{coinData?.market_cap_rank}}</span></span><br>
+          <span class="current-price"><strong>Current Price: </strong><span class="value">{{coinData?.market_data.current_price.inr | currency: currency}}</span></span> <br>
+          <span class="market-cap"><strong>Market Cap: </strong><span class="value">{{coinData?.market_data.market_cap.inr | currency: currency}}</span></span>
         </div>
       </div>
     </div>
-    <div class="col-md-8">
-      <canvas baseChart [data]="lineChartData" [options]="lineChartOptions" [type]="lineChartType" style="width: 300px;"></canvas>
-      <div class="d-flex justify-content-around mt-5 mx-5">
-        <button (click) = "getGraphData(1)" class="btn btn-custom">1 Day</button>
-        <button (click) = "getGraphData(30)" class="btn btn-custom">30 Days</button>
-        <button (click) = "getGraphData(90)" class="btn btn-custom">90 Days</button>
-        <button (click) = "getGraphData(365)" class="btn btn-custom">1 Year</button>
-
+    <div class="container-fluid col-md-8">
+      <canvas baseChart [data]="lineChartData" [options]="lineChartOptions" [type]="lineChartType" style="width: 100%;"></canvas>
+      <div class="d-flex justify-content-around mt-3 mx-5">
+        <button mat-raised-button (click) = "getGraphData(1)" class="btn btn-custom">1 Day</button>
+        <button mat-raised-button (click) = "getGraphData(30)" class="btn btn-custom">30 Days</button>
+        <button mat-raised-button (click) = "getGraphData(90)" class="btn btn-custom">90 Days</button>
+        <button mat-raised-button (click) = "getGraphData(365)" class="btn btn-custom">1 Year</button>
       </div>
     </div>
   </div>

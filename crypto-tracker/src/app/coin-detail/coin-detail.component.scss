@@ -6,37 +6,50 @@
   color: white
 }
 .details {
-  .coin-name {
-    font-size: 30px;
-    font-weight: bold;
-    margin: 20px 0px 30px 50px;
+  color: white;
+
+  #img-title {
+    display: grid;
+    justify-content: center;
+
+    #coin-name {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 20px 0px 30px 0px;
+      // margin-top: 10px;
+      text-align: center;
+    }
+  }
+  .information {
+    font-size: large;
+    color: lightgray;
   }
 }
 
 .more-details {
-  margin-top: 50px;
+  margin-top: 30px;
   .rank, .current-price, .market-cap{
     font-size: 24px;
     font-weight: 300;
   }
 }
 .btn-custom {
-  color: rgb(0, 0, 0);
-  background: transparent;
-  font-weight: 500;
-  font-size: 20px;
-  border: 1px solid #fff;
-  width: 23%
+  // color: rgb(0, 0, 0);
+  // background: transparent;
+  // font-weight: 500;
+  // font-size: 20px;
+  // border: 1px solid #fff;
+  width: 20%
 }
 .btn-custom:focus {
-  background: #00b9a1;
+  background: darkgray;
   font-weight: 700;
-  font-size: 22px;
+  // font-size: 22px;
   border: 1px solid #009688;
 }
 .btn-custom:hover {
-  background-color: #009699;
+  background-color: rgb(69, 69, 69);
   font-weight: 600;
-  font-size: 22px;
-  border: 1px solid #009699;
+  // font-size: 22px;
+  border: 1px solid black;
 }

@@ -4,6 +4,7 @@ import {ApiService} from '../service/api.service';
 import {ChartConfiguration, ChartType} from 'chart.js';
 import {BaseChartDirective} from 'ng2-charts';
 import { CurrencyService } from '../service/currency.service';
+import { withLatestFrom } from 'rxjs';
 
 @Component({
   selector: 'app-coin-detail',
@@ -21,10 +22,10 @@ export class CoinDetailComponent implements OnInit {
       {
         data: [],
         label: 'Price Trends',
-        backgroundColor: 'rgba(148,159,177,0.2)',
-        borderColor: '#009688',
-        pointBackgroundColor: '#009688',
-        pointBorderColor: '#009688',
+        backgroundColor: "rgba(0,0,0,1)",
+        borderColor: 'white',
+        pointBackgroundColor: 'rgba(0,0,0,0.4)',
+        pointBorderColor: '#000',
         pointHoverBackgroundColor: '#009688',
         pointHoverBorderColor: '#009688',
       }
@@ -33,14 +34,22 @@ export class CoinDetailComponent implements OnInit {
   };
 
   public lineChartOptions: ChartConfiguration['options'] = {
+    responsive: true,
     elements: {
+      line: {
+        tension: 0.5
+      },
       point: {
         radius: 1
       }
     },
     plugins: {
       legend: { display: true },
-    }
+    },
+    scales: {
+      x: {},
+
+    },
   };
 
   public lineChartType: ChartType = 'line';
