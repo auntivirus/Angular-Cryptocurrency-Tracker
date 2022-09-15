@@ -67,28 +67,28 @@ export class CoinDetailComponent implements OnInit {
       console.log(this.coinData);
       if(this.currency === "USD")
       {
-        // res.market_data.current_price.inr = res.market_data.current_price.usd;
-        // res.market_data.market_cap.inr = res.market_data.market_cap.usd;
+        res.market_data.current_price.inr = res.market_data.current_price.usd;
+        res.market_data.market_cap.inr = res.market_data.market_cap.usd;
       }
-      // res.market_data.current_price.inr = res.market_data.current_price.inr;
-      // res.market_data.market_cap.inr = res.market_data.market_cap.inr;
+      res.market_data.current_price.inr = res.market_data.current_price.inr;
+      res.market_data.market_cap.inr = res.market_data.market_cap.inr;
       this.coinData = res;
     });
   };
 
   getGraphData(days: number) {
     this.days = days;
-    this.api.getGraphCurrencyData(this.coinId,this.currency,this.days).subscribe(res=> {
+    this.api.getGraphCurrencyData(this.coinId,this.currency,this.days).subscribe(res  => {
       setTimeout(() => {
         this.myLineChart.chart?.update();
       }, 200);
-      // this.lineChartData.datasets[0].data = res.prices.map((a:any) => { return a[1] });
-      // this.lineChartData.labels = res.prices.map((a:any) => {
-      //   let date = new Date(a[0]);
-      //   let time = date.getHours() > 12 ? `${date.getHours() - 12}: ${date.getMinutes()} PM` :
-      //   `${date.getHours()}: ${date.getMinutes()} AM`
-      //   return this.days === 1 ? time : date.toLocaleDateString();
-      // });
+      this.lineChartData.datasets[0].data = res.prices.map((a:any) => { return a[1] });
+      this.lineChartData.labels = res.prices.map((a:any) => {
+        let date = new Date(a[0]);
+        let time = date.getHours() > 12 ? `${date.getHours() - 12}: ${date.getMinutes()} PM` :
+        `${date.getHours()}: ${date.getMinutes()} AM`
+        return this.days === 1 ? time : date.toLocaleDateString();
+      });
     })
   };
 }

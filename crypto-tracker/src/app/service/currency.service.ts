@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CurrencyService {
   private selectedCurrency: BehaviorSubject <string> = new BehaviorSubject<string>("INR");
+
   constructor() { }
 
   getCurrency() {

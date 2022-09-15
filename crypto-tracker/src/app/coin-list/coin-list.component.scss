@@ -4,8 +4,9 @@
   flex-direction: column;
   text-align: left;
   justify-content: center;
-  color: bisque;
-  margin-top: 20px;
+  color: black;
+  margin-top: 10px;
+  margin-bottom: -30px;
   h2 {
     font-weight: bolder;
     margin-bottom: 20px;
@@ -14,7 +15,7 @@
     letter-spacing: 0.3em;
   }
   p {
-    color: whitesmoke;
+    color: black;
     text-transform: capitalize;
     font-size: 0.8rem;
 
@@ -25,7 +26,7 @@
 background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 300px;
+  height: 400px;
   width: 100%;
   ;
 }

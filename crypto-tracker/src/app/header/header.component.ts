@@ -8,7 +8,7 @@ import { CurrencyService } from '../service/currency.service';
 })
 export class HeaderComponent implements OnInit {
   selectedCurrency: string = "INR";
-
+  navbarColor: string = "#1F0322";
   constructor(private currencyService: CurrencyService) { }
 
   sendCurrency(event: string) {

@@ -38,9 +38,10 @@ $crypto-theme: mat-dark-theme((
 html, body { height: 100%; }
 body {
   margin: 0;
-  height: 100%;
+  height: max-content;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   // background-color: gray;
-  background-color: #8BC6EC;
-background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  background-color: gray;
+  // background-color: #8BC6EC;
+// background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 }
